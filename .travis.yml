@@ -6,8 +6,11 @@ before_script:
 - bower install
 script:
 - grunt
+after_success:
+- rm -rf node_modules
 deploy:
   provider: heroku
   api_key:
     secure: OsbR5rjYyO1VUNTwMiB60DMWQRjI2UmwXZx2tDKU1PEOFVrerHaUQEoMMQ2/9Q+Rz6u1g1QR+heRCxH3wIfRspIfI8ImdTwxsxzfka0WdA4R3NQgbjvtqPJZZjt7QKBiGqszjoqOcmwHYVYjanvK5yZiVDPErIoTBqtSH/EniQw=
   app: angular-tennis
+  skip_cleanup: true
