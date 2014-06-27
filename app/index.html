@@ -67,15 +67,15 @@
                 <p class="lead">Angular tennis is the brand new service you need. Better than facebook, even better than yo !</p>
                 <p class="lead">Want to be notified about incoming features ?</p>
 
-                <form>
+                <form name="keepMePostedForm" role="form">
+                    <div ng-show="alert" class="alert alert-info" role="alert"><strong>Sorry dude !</strong> even this functionality is not yet available. Keep in touch !</div>
                     <p class="input-group">
                         <span class="input-group-addon"><span class="icon-envelope"></span></span>
-                        <input type="text" class="form-control input-lg" name="email"
-                               placeholder="Enter your email here"/>
+                        <input type="email" class="form-control input-lg" name="email" ng-model="user.email" placeholder="Enter your email here" required=""/>
                     </p>
 
                     <p class="text-center">
-                        <button type="submit" class="btn btn-primary btn-lg">Keep me posted</button>
+                        <button ng-disabled="!keepMePostedForm.$valid" ng-click="alert = true" type="submit" class="btn btn-primary btn-lg">Keep me posted</button>
                     </p>
                     </span>
                 </form>
